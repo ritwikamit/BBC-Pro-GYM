@@ -28,9 +28,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
   return (
     <footer className="relative bg-[#000000] border-t border-white/10 pt-16 pb-28 md:pb-16 text-white/60 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-40 rounded-full bg-[#ffd000]/5 blur-[120px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 mb-12">
           {/* Col 1: Brand & Identity with official emblem */}

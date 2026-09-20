@@ -5,10 +5,6 @@ import { Award, Target, Send, BadgeCheck } from 'lucide-react';
 export const TrainersSection: React.FC = () => {
   return (
     <section id="trainers" className="relative py-20 sm:py-24 lg:py-28 bg-transparent border-t border-white/10 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/3 right-0 w-96 h-96 rounded-full bg-[#ffd000]/5 blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-[#d49a00]/5 blur-[130px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
@@ -31,7 +27,7 @@ export const TrainersSection: React.FC = () => {
           {TRAINERS.map((trainer) => (
             <div
               key={trainer.id}
-              className="group glass-card rounded-3xl overflow-hidden border border-white/15 hover:border-white/30 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between shadow-2xl"
+              className="group glass-card rounded-3xl overflow-hidden border border-white/15 hover:border-white/30 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between shadow-2xl"
             >
               <div>
                 {/* Photo Header */}
@@ -39,8 +35,9 @@ export const TrainersSection: React.FC = () => {
                   <img
                     src={trainer.image}
                     alt={trainer.name}
-                    className="w-full h-full object-cover object-top filter contrast-105 group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0e] via-transparent to-transparent opacity-90" />
 

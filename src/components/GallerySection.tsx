@@ -14,9 +14,6 @@ export const GallerySection: React.FC = () => {
 
   return (
     <section id="gallery" className="relative py-20 sm:py-24 lg:py-28 bg-transparent border-t border-white/10 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 -left-20 w-96 h-96 rounded-full bg-[#ffd000]/5 blur-[150px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
         {/* Header and Category Filters */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -38,7 +35,7 @@ export const GallerySection: React.FC = () => {
                 className={`text-xs uppercase tracking-[0.16em] px-4 py-2.5 rounded-full transition-all duration-300 shrink-0 min-h-[40px] ${
                   activeCategory === cat
                     ? 'glass-btn-funky shadow-lg'
-                    : 'glass-btn text-white/70 hover:text-white'
+                    : 'glass-btn hover:text-white'
                 }`}
               >
                 {cat}
@@ -53,13 +50,14 @@ export const GallerySection: React.FC = () => {
             <div
               key={item.id}
               onClick={() => setSelectedImage(item)}
-              className="group relative rounded-3xl overflow-hidden aspect-[4/3] glass-card border-white/10 cursor-pointer hover:border-[#ffd000]/60 transition-all duration-500 shadow-xl hover:-translate-y-1"
+              className="group relative rounded-3xl overflow-hidden aspect-[4/3] glass-card border-white/10 cursor-pointer hover:border-[#ffd000]/60 transition-all duration-300 shadow-xl hover:-translate-y-1"
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95 group-hover:brightness-105"
                 loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/30 to-transparent opacity-0 group-hover:opacity-95 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <div className="flex items-center justify-between">

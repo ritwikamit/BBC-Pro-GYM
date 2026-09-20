@@ -5,9 +5,6 @@ import { Star, Quote, ExternalLink } from 'lucide-react';
 export const TestimonialsSection: React.FC = () => {
   return (
     <section className="relative py-20 sm:py-24 lg:py-28 bg-transparent border-t border-white/10 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 right-10 w-96 h-96 rounded-full bg-[#ffd000]/5 blur-[160px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>

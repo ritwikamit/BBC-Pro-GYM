@@ -5,10 +5,6 @@ import { Award, TrendingUp, Clock3, Users2, ShieldCheck } from 'lucide-react';
 export const AboutSection: React.FC = () => {
   return (
     <section id="about" className="relative py-20 sm:py-24 lg:py-28 bg-transparent border-t border-white/10 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 rounded-full bg-[#ffd000]/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#ff7b00]/5 blur-[120px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Visual Composition with Emblem Accent */}
@@ -17,12 +13,14 @@ export const AboutSection: React.FC = () => {
               <img
                 src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=1000&q=80"
                 alt="BBC Pro Gym Training Atmosphere"
-                className="w-full h-[440px] sm:h-[500px] object-cover filter contrast-105 group-hover:scale-105 transition-all duration-700"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-[440px] sm:h-[500px] object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#060609] via-transparent to-transparent opacity-85" />
 
               {/* Floating Lucidity Glass Badge */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl glass-panel border-white/20 backdrop-blur-2xl shadow-2xl">
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl glass-panel border-white/20 shadow-2xl">
                 <div className="flex items-center gap-3.5">
                   <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-[#ffd000]/25 to-[#ff9800]/25 border border-[#ffd000]/40 flex items-center justify-center text-[#ffd000] shrink-0">
                     <Award className="w-5 h-5" />

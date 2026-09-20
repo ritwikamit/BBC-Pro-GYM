@@ -328,7 +328,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {/* Left Column: Telemetry Ribbon, Headline, Copy, Action Buttons */}
           <div className="lg:col-span-7 space-y-5 sm:space-y-7 md:space-y-8">
             {/* Redesigned Telemetry Status Ribbon - fluid rounded on mobile */}
-            <div className="inline-flex flex-wrap items-center gap-2 p-1.5 rounded-2xl sm:rounded-full bg-white/[0.04] border border-white/15 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] max-w-full">
+            <div className="inline-flex flex-wrap items-center gap-2 p-1.5 rounded-2xl sm:rounded-full bg-white/[0.04] border border-white/15 shadow-xl max-w-full">
               {/* Location Badge */}
               <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ffd000]/10 border border-[#ffd000]/30 text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.14em] text-[#ffd000] uppercase shrink-0">
                 <Radio className="w-3.5 h-3.5 text-[#ffd000] animate-pulse" />
@@ -352,7 +352,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="space-y-2">
               <h1 className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-display font-bold tracking-tight leading-[1.08] sm:leading-[1.05] text-white">
                 BUILD YOUR{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fff4a8] via-[#ffd000] to-[#d49a00] drop-shadow-[0_0_35px_rgba(255,208,0,0.25)]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fff4a8] via-[#ffd000] to-[#d49a00]">
                   STRONGEST SELF.
                 </span>
               </h1>
@@ -386,7 +386,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
               <button
                 onClick={onOpenEnquiry}
-                className="glass-btn-funky text-xs uppercase tracking-[0.16em] font-bold px-5 sm:px-7 py-3.5 rounded-2xl flex items-center gap-2 shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all shrink-0 min-h-[44px]"
+                className="glass-btn-funky text-xs uppercase tracking-[0.16em] font-bold px-5 sm:px-7 py-3.5 rounded-2xl flex items-center gap-2 shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-transform shrink-0 min-h-[44px]"
               >
                 <span>Join Now</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -410,25 +410,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
           </div>
 
-          {/* Right Column: Lucid Dark Frosted Blur Transparent Facility Glass Console - Responsive Tablet & Mobile Centered */}
+          {/* Right Column: Lucid Facility Glass Console */}
           <div className="lg:col-span-5 w-full md:max-w-xl md:mx-auto lg:max-w-none lg:mx-0">
-            <div className="relative rounded-3xl bg-[#09090f]/75 border border-white/15 p-5 sm:p-7 shadow-[0_24px_80px_rgba(0,0,0,0.75)] backdrop-blur-3xl overflow-hidden ring-1 ring-white/[0.08] before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-b before:from-white/[0.04] before:via-transparent before:to-black/60 before:pointer-events-none">
-              {/* Subtle Ambient Gold Prismatic Glow */}
-              <div className="absolute -top-12 -right-12 w-48 h-48 bg-[#ffd000]/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-white/[0.02] rounded-full blur-2xl pointer-events-none" />
-
+            <div className="relative rounded-3xl bg-[#0b0b12]/90 border border-white/15 p-5 sm:p-7 shadow-2xl overflow-hidden">
               {/* Header: Title + Live Status Badge */}
               <div className="relative z-10 flex items-start justify-between gap-4 border-b border-white/10 pb-5 mb-5">
                 <div>
                   <div className="flex items-center gap-2 mb-1.5">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[10px] font-mono font-bold tracking-[0.16em] text-emerald-300 uppercase backdrop-blur-md">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[10px] font-mono font-bold tracking-[0.16em] text-emerald-300 uppercase">
                       LIVE DESK
                     </span>
                     <span className="text-[10px] font-mono text-white/50 uppercase tracking-widest">
                       MISSION SCHOOL RD
                     </span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-display font-bold text-white tracking-tight drop-shadow-sm">
+                  <h3 className="text-xl sm:text-2xl font-display font-bold text-white tracking-tight">
                     Facility Access & Shifts
                   </h3>
                 </div>
@@ -438,7 +434,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   href={GYM_DATA.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="shrink-0 flex flex-col items-end px-3 py-2 rounded-2xl bg-black/45 border border-white/10 hover:border-[#ffd000]/60 backdrop-blur-xl transition-all group shadow-sm hover:scale-[1.02]"
+                  className="shrink-0 flex flex-col items-end px-3 py-2 rounded-2xl bg-black/60 border border-white/10 hover:border-[#ffd000]/60 transition-colors group shadow-sm hover:scale-[1.02]"
                   aria-label="View 174+ Reviews on Google Maps"
                 >
                   <div className="flex items-center gap-1 text-[#ffd000]">
@@ -451,7 +447,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               {/* Shift Hours Grid */}
               <div className="relative z-10 space-y-2.5 font-mono">
-                <div className="p-3.5 rounded-2xl bg-black/45 border border-white/[0.08] hover:border-[#ffd000]/40 hover:bg-black/60 backdrop-blur-xl transition-all">
+                <div className="p-3.5 rounded-2xl bg-black/60 border border-white/[0.08] hover:border-[#ffd000]/40 hover:bg-black/80 transition-colors">
                   <div className="flex items-center justify-between mb-1">
                     <div className="flex items-center gap-2">
                       <span className="text-[11px] font-bold text-[#ffd000] uppercase tracking-wider">
@@ -470,7 +466,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-black/45 border border-white/[0.08] hover:border-[#ffd000]/40 hover:bg-black/60 backdrop-blur-xl transition-all">
+                <div className="p-3.5 rounded-2xl bg-black/60 border border-white/[0.08] hover:border-[#ffd000]/40 hover:bg-black/80 transition-colors">
                   <div className="flex items-center justify-between mb-1">
                     <div className="flex items-center gap-2">
                       <span className="text-[11px] font-bold text-[#ffd000] uppercase tracking-wider">
@@ -489,7 +485,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   </p>
                 </div>
 
-                <div className="px-3.5 py-2.5 rounded-2xl bg-black/35 border border-white/[0.06] flex items-center justify-between text-[11px] backdrop-blur-md">
+                <div className="px-3.5 py-2.5 rounded-2xl bg-black/40 border border-white/[0.06] flex items-center justify-between text-[11px]">
                   <span className="text-white/70 font-medium">Sunday Access</span>
                   <span className="text-[#ffd000] font-bold">Special Sessions / Contact Desk</span>
                 </div>
@@ -497,15 +493,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
               {/* Amenities Micro-Badges */}
               <div className="relative z-10 grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-white/10">
-                <div className="flex items-center gap-1.5 p-2 rounded-xl bg-black/40 border border-white/[0.08] text-[10px] font-mono text-white/90 backdrop-blur-sm">
+                <div className="flex items-center gap-1.5 p-2 rounded-xl bg-black/50 border border-white/[0.08] text-[10px] font-mono text-white/90">
                   <CheckCircle2 className="w-3 h-3 text-[#ffd000] shrink-0" />
                   <span className="truncate">Free Weights 50kg+</span>
                 </div>
-                <div className="flex items-center gap-1.5 p-2 rounded-xl bg-black/40 border border-white/[0.08] text-[10px] font-mono text-white/90 backdrop-blur-sm">
+                <div className="flex items-center gap-1.5 p-2 rounded-xl bg-black/50 border border-white/[0.08] text-[10px] font-mono text-white/90">
                   <CheckCircle2 className="w-3 h-3 text-[#ffd000] shrink-0" />
                   <span className="truncate">Plate Matrix</span>
                 </div>
-                <div className="flex items-center gap-1.5 p-2 rounded-xl bg-black/40 border border-white/[0.08] text-[10px] font-mono text-white/90 backdrop-blur-sm">
+                <div className="flex items-center gap-1.5 p-2 rounded-xl bg-black/50 border border-white/[0.08] text-[10px] font-mono text-white/90">
                   <CheckCircle2 className="w-3 h-3 text-[#ffd000] shrink-0" />
                   <span className="truncate">AC Training Hall</span>
                 </div>
@@ -539,7 +535,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* ═════════════════════════════════════════════════
           BOTTOM RECOGNITION & STATS STRIP
           ═════════════════════════════════════════════════ */}
-      <div className="relative z-10 w-full border-t border-white/10 bg-black/40 backdrop-blur-xl">
+      <div className="relative z-10 w-full border-t border-white/10 bg-black/70">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-5">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 font-mono text-center md:text-left">
             <div className="border-r border-white/10 last:border-none pr-4">
