@@ -112,13 +112,11 @@ export const SeamlessHeroBackground: React.FC<SeamlessHeroBackgroundProps> = ({
     };
   }, [isVisible]);
 
-  // RAF loop to monitor video playback and execute seamless cross-dissolve (runs only when visible)
+  // Periodic timer to monitor video playback and execute seamless cross-dissolve (runs only when visible)
   useEffect(() => {
     if (!isVisible) return;
 
-    let animId: number;
-
-    const checkLoop = () => {
+    const checkInterval = setInterval(() => {
       if (!isVisibleRef.current) return;
 
       const vA = videoRefA.current;
@@ -169,12 +167,9 @@ export const SeamlessHeroBackground: React.FC<SeamlessHeroBackgroundProps> = ({
           }
         }
       }
+    }, 200);
 
-      animId = requestAnimationFrame(checkLoop);
-    };
-
-    animId = requestAnimationFrame(checkLoop);
-    return () => cancelAnimationFrame(animId);
+    return () => clearInterval(checkInterval);
   }, [isVisible, activeVideo]);
 
   // Ambient floating gold embers on HTML5 canvas (paused when off-screen)
@@ -183,7 +178,7 @@ export const SeamlessHeroBackground: React.FC<SeamlessHeroBackgroundProps> = ({
 
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
 
     let animId: number;
@@ -198,7 +193,7 @@ export const SeamlessHeroBackground: React.FC<SeamlessHeroBackgroundProps> = ({
 
     window.addEventListener('resize', handleResize, { passive: true });
 
-    const count = Math.min(Math.floor(width / 40), 28);
+    const count = Math.min(Math.floor(width / 50), 22);
     const particles = Array.from({ length: count }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
@@ -229,8 +224,6 @@ export const SeamlessHeroBackground: React.FC<SeamlessHeroBackgroundProps> = ({
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 208, 0, ${p.alpha})`;
-        ctx.shadowColor = '#ffd000';
-        ctx.shadowBlur = 8;
         ctx.fill();
       });
 

@@ -10,15 +10,15 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [hasExited, setHasExited] = useState(false);
 
   useEffect(() => {
-    // Minimal, fast presentation
+    // Fast, crisp initial presentation
     const timer = setTimeout(() => {
       setIsDone(true);
       if (onComplete) onComplete();
-    }, 850);
+    }, 450);
 
     const exitTimer = setTimeout(() => {
       setHasExited(true);
-    }, 1400);
+    }, 850);
 
     return () => {
       clearTimeout(timer);
@@ -31,7 +31,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   return (
     <div
       id="site-preloader"
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#000000] transition-opacity duration-700 select-none ${
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#000000] transition-opacity duration-400 select-none ${
         isDone ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
       aria-label="Loading"

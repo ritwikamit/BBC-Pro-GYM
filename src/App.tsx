@@ -42,7 +42,7 @@ export default function App() {
     if (page === 'facilities' || page === 'trainers' || page === 'location') {
       setCurrentPage(page);
       window.location.hash = `#/${page}`;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo(0, 0);
     } else {
       setCurrentPage('home');
       window.location.hash = hash || '#/';
@@ -50,9 +50,9 @@ export default function App() {
         setTimeout(() => {
           const el = document.getElementById(hash.replace('#', ''));
           if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 120);
+        }, 60);
       } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo(0, 0);
       }
     }
   };
@@ -66,40 +66,43 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050507] text-[#fafafa] relative selection:bg-[#ffd000] selection:text-[#050507] overflow-x-hidden transition-colors duration-500">
+    <div className="min-h-screen bg-[#050507] text-[#fafafa] relative selection:bg-[#ffd000] selection:text-[#050507] overflow-x-hidden">
       {/* 0. Animated Site Preloader */}
       <Preloader />
 
+      {/* Persistent Viewport Atmospheric Background Engine */}
+      <AnimatedBodyBackground />
+
       {/* RENDER DEDICATED WEBPAGES OR STREAMLINED HOME PAGE */}
       {currentPage === 'facilities' ? (
-        <>
+        <div className="relative z-10 flex flex-col min-h-screen justify-between">
           <FacilitiesPage
             onBackToHome={() => handleNavigate('home')}
             onOpenEnquiry={handleOpenEnquiry}
             onNavigate={handleNavigate}
           />
           <Footer onNavigate={handleNavigate} />
-        </>
+        </div>
       ) : currentPage === 'trainers' ? (
-        <>
+        <div className="relative z-10 flex flex-col min-h-screen justify-between">
           <TrainersPage
             onBackToHome={() => handleNavigate('home')}
             onOpenEnquiry={handleOpenEnquiry}
             onNavigate={handleNavigate}
           />
           <Footer onNavigate={handleNavigate} />
-        </>
+        </div>
       ) : currentPage === 'location' ? (
-        <>
+        <div className="relative z-10 flex flex-col min-h-screen justify-between">
           <LocationPage
             onBackToHome={() => handleNavigate('home')}
             onOpenEnquiry={handleOpenEnquiry}
             onNavigate={handleNavigate}
           />
           <Footer onNavigate={handleNavigate} />
-        </>
+        </div>
       ) : (
-        <>
+        <div className="relative z-10">
           {/* 1. Cinematic Hero Section with smooth ambient background and dark lucid console */}
           <HeroSection
             onOpenEnquiry={handleOpenEnquiry}
@@ -107,11 +110,8 @@ export default function App() {
             onNavigate={handleNavigate}
           />
 
-          {/* Animated Atmosphere Container for streamlined middle content sections */}
+          {/* Streamlined middle content sections */}
           <main className="relative overflow-hidden">
-            {/* Animated Background Engine */}
-            <AnimatedBodyBackground />
-
             {/* 2. Heritage & About Section with Lucidity Glassmorphism */}
             <AboutSection />
 
@@ -130,7 +130,7 @@ export default function App() {
 
           {/* 7. Lucidity Glass Footer */}
           <Footer onNavigate={handleNavigate} />
-        </>
+        </div>
       )}
 
       {/* Sticky Mobile Action Bar (Call / WhatsApp / Directions) */}

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { BbcLogo } from './BbcLogo';
 import { LocationSection } from './LocationSection';
-import { AnimatedBodyBackground } from './AnimatedBodyBackground';
 import { GYM_DATA } from '../data/gym';
 import { ArrowLeft, ArrowUpRight, MapPin, Compass, Navigation, PhoneCall, Clock3, Car, Train, Bike } from 'lucide-react';
 
@@ -17,14 +16,11 @@ export const LocationPage: React.FC<LocationPageProps> = ({
   onNavigate,
 }) => {
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#000000] text-white flex flex-col justify-between overflow-hidden selection:bg-[#ffd000] selection:text-black">
-      {/* Interactive Cyber Cloth Canvas Background Engine */}
-      <AnimatedBodyBackground />
-
+    <div className="relative min-h-screen text-white flex flex-col justify-between overflow-hidden selection:bg-[#ffd000] selection:text-black">
       {/* Top Floating Glass Navigation Bar */}
       <header className="sticky top-0 z-50 w-full glass-nav-bar py-3 px-4 sm:px-8 border-b border-white/10 shadow-2xl backdrop-blur-2xl">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
