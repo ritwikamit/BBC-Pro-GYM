@@ -419,3 +419,10 @@ header.glass-nav-bar,
   }
 }
 
+/* Content-visibility optimization: offscreen sections do not layout or paint until scrolled near viewport */
+main > section {
+  content-visibility: auto;
+  contain-intrinsic-size: 750px;
+}
+
+

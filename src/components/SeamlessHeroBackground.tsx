@@ -25,52 +25,58 @@ export const SeamlessHeroBackground: React.FC<SeamlessHeroBackgroundProps> = ({
     video.setAttribute('muted', '');
     video.setAttribute('playsinline', '');
 
-    if (isVisible) {
-      video.play().catch(() => {
-        // Will auto-resume on first user gesture
-      });
+    if (isVisible && window.scrollY <= 30) {
+      video.play().catch(() => {});
     }
 
     const handleGesture = () => {
-      if (video.paused && isVisible) {
+      if (video.paused && isVisible && window.scrollY <= 30) {
         video.play().catch(() => {});
       }
     };
 
     window.addEventListener('touchstart', handleGesture, { passive: true, once: true });
     window.addEventListener('click', handleGesture, { passive: true, once: true });
-    window.addEventListener('scroll', handleGesture, { passive: true, once: true });
 
     return () => {
       window.removeEventListener('touchstart', handleGesture);
       window.removeEventListener('click', handleGesture);
-      window.removeEventListener('scroll', handleGesture);
     };
   }, []);
 
-  // Pause video when hero is scrolled out of viewport to free 100% GPU video decoding cycles
+  // Performance Guard: Pause video immediately whenever user scrolls down past the hero top.
+  // This frees 100% of GPU video decoding bandwidth during scrolling, ensuring locked 60/120 FPS.
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    if (!isVisible) {
-      if (!video.paused) {
-        video.pause();
+    let isTicking = false;
+    const handleScrollPause = () => {
+      if (!isTicking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 30 || !isVisible) {
+            if (!video.paused) {
+              video.pause();
+            }
+          } else {
+            if (video.paused) {
+              video.play().catch(() => {});
+            }
+          }
+          isTicking = false;
+        });
+        isTicking = true;
       }
-    } else {
-      if (video.paused) {
-        video.play().catch(() => {});
-      }
-    }
+    };
+
+    window.addEventListener('scroll', handleScrollPause, { passive: true });
+    return () => window.removeEventListener('scroll', handleScrollPause);
   }, [isVisible]);
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none" aria-hidden="true">
-      {/* 
-        Native Direct Hardware-Accelerated Video Layer:
-        No CPU filters, no matrix transformations, direct GPU compositor pass-through
-      */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* Native Direct Hardware-Accelerated Video Layer */}
+      <div className="absolute inset-0 w-full h-full opacity-90">
         <video
           ref={videoRef}
           autoPlay
@@ -85,7 +91,7 @@ export const SeamlessHeroBackground: React.FC<SeamlessHeroBackgroundProps> = ({
         </video>
       </div>
 
-      {/* Directional scrim overlays: optimal text readability with zero GPU filter passes */}
+      {/* Directional scrim overlays: optimal text contrast and seamless integration with background grid */}
       <div className="absolute inset-0 z-[2] bg-gradient-to-r from-black/85 via-black/50 to-black/20 lg:from-black/80 lg:via-black/35 lg:to-transparent" />
       <div className="absolute inset-0 z-[2] bg-gradient-to-t from-[#050507] via-transparent to-black/50" />
     </div>

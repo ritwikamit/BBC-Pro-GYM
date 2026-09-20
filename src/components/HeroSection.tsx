@@ -140,7 +140,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex flex-col justify-between bg-[#000000] text-white overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-between bg-transparent text-white overflow-hidden"
     >
       {/* ═════════════════════════════════════════════════
           SEAMLESS INFINITELY CONTINUOUS HERO BACKGROUND
