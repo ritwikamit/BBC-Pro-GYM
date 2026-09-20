@@ -33,9 +33,9 @@ export const AnimatedBodyBackground: React.FC = () => {
           className="absolute inset-0"
           style={{
             backgroundImage: `
-              linear-gradient(to right, rgba(255, 215, 60, 0.14) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255, 215, 60, 0.14) 1px, transparent 1px),
-              radial-gradient(circle at 1px 1px, rgba(255, 215, 60, 0.3) 1.5px, transparent 0)
+              linear-gradient(to right, rgba(255, 208, 0, 0.16) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255, 208, 0, 0.16) 1px, transparent 1px),
+              radial-gradient(circle at 1px 1px, rgba(255, 208, 0, 0.35) 1.5px, transparent 0)
             `,
             backgroundSize: '54px 54px, 54px 54px, 54px 54px',
           }}
@@ -46,8 +46,8 @@ export const AnimatedBodyBackground: React.FC = () => {
           className="absolute inset-0 opacity-40"
           style={{
             backgroundImage: `
-              linear-gradient(to right, rgba(255, 215, 60, 0.25) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255, 215, 60, 0.25) 1px, transparent 1px)
+              linear-gradient(to right, rgba(255, 208, 0, 0.28) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255, 208, 0, 0.28) 1px, transparent 1px)
             `,
             backgroundSize: '270px 270px',
           }}

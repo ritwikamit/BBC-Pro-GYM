@@ -321,6 +321,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       )}
 
       {/* ═════════════════════════════════════════════════
+          FADED OFFICIAL BBC PRO GYM EMBLEM WATERMARK IN HERO BACKGROUND
+          ═════════════════════════════════════════════════ */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none z-[2] overflow-hidden flex items-center justify-center opacity-[0.10] sm:opacity-[0.13] transition-opacity"
+        aria-hidden="true"
+      >
+        <picture>
+          <source srcSet="/bbc-logo-emblem.webp" type="image/webp" />
+          <img
+            src="/bbc-logo-emblem.png"
+            alt=""
+            className="w-[440px] sm:w-[620px] md:w-[760px] lg:w-[880px] max-w-none object-contain filter drop-shadow-[0_0_80px_rgba(255,208,0,0.4)]"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
+      </div>
+
+      {/* ═════════════════════════════════════════════════
           HERO MAIN STAGE
           ═════════════════════════════════════════════════ */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 flex-1 flex flex-col justify-center">
