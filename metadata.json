@@ -1,0 +1,7 @@
+{
+  "name": "BBC Pro Gym",
+  "description": "Official website of BBC Pro Gym in Aurangabad, Bihar. Premium strength training, cardio, and body transformation center with modern equipment and expert guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
