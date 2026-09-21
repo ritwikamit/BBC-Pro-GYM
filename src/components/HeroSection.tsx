@@ -17,8 +17,6 @@ import {
   X,
   ExternalLink,
   ChevronDown,
-  MapPin,
-  Radio,
   CheckCircle2,
 } from 'lucide-react';
 
@@ -344,38 +342,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           ═════════════════════════════════════════════════ */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 flex-1 flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-          {/* Left Column: Telemetry Ribbon, Headline, Copy, Action Buttons */}
-          <div className="lg:col-span-7 space-y-5 sm:space-y-7 md:space-y-8">
-            {/* Redesigned Telemetry Status Ribbon - fluid rounded on mobile */}
-            <div className="inline-flex flex-wrap items-center gap-2 p-1.5 rounded-2xl sm:rounded-full bg-white/[0.04] border border-white/15 shadow-xl max-w-full">
-              {/* Location Badge */}
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ffd000]/10 border border-[#ffd000]/30 text-[10px] sm:text-[11px] font-mono font-bold tracking-[0.14em] text-[#ffd000] uppercase shrink-0">
-                <Radio className="w-3.5 h-3.5 text-[#ffd000] animate-pulse" />
-                <span>AURANGABAD HQ</span>
-              </div>
-
-              {/* Coordinates */}
-              <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 text-[11px] font-mono text-white/75 shrink-0">
-                <MapPin className="w-3 h-3 text-[#ffd000]/90 shrink-0" />
-                <span>24.74° N, 84.36° E</span>
-              </div>
-
-              {/* Status Pill */}
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] sm:text-[11px] font-mono font-semibold text-emerald-400 shrink-0">
-                <Clock3 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>OPEN · 05:00 AM – 10:00 PM</span>
-              </div>
-            </div>
-
+          {/* Left Column: Headline, Copy, Action Buttons */}
+          <div className="lg:col-span-7 space-y-6 sm:space-y-7 md:space-y-8">
             {/* Main Headline in Syne - Optimized for Phone & Tablet Scales */}
-            <div className="space-y-2">
+            <div className="space-y-2.5 sm:space-y-3">
               <h1 className="text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-display font-bold tracking-tight leading-[1.08] sm:leading-[1.05] text-white">
                 BUILD YOUR{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fff4a8] via-[#ffd000] to-[#d49a00]">
                   STRONGEST SELF.
                 </span>
               </h1>
-              <p className="text-[11px] sm:text-xs md:text-sm font-mono text-[#a7a6b5] tracking-[0.18em] sm:tracking-[0.2em] uppercase pt-1">
+              <p className="text-[11px] sm:text-xs md:text-sm font-mono text-[#a7a6b5] tracking-[0.18em] sm:tracking-[0.2em] uppercase pt-0.5">
                 FORGED IN AURANGABAD, BIHAR · MISSION SCHOOL ROAD
               </p>
             </div>
