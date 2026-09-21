@@ -255,7 +255,7 @@ export const MEMBERSHIP_PLANS: MembershipPlan[] = [
     title: "Starter Strength",
     duration: "1 Month Pass",
     price: "₹1,200",
-    effectiveMonthly: "₹1,200 / month",
+    effectiveMonthly: "Billed monthly · No commitment",
     features: [
       "Full gym floor & free-weight access",
       "Morning (05:00 AM) & Evening shifts",
@@ -304,7 +304,7 @@ export const MEMBERSHIP_PLANS: MembershipPlan[] = [
     duration: "12 Months (1 Year)",
     price: "₹9,999",
     effectiveMonthly: "₹833 / month",
-    badge: "MAX VALUE · SAVE 30%",
+    badge: "MAX VALUE",
     features: [
       "Full 365-day all-access membership",
       "2 One-on-one personal coaching sessions",
