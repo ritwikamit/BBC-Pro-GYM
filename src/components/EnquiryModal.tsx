@@ -37,7 +37,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({ isOpen, onClose }) =
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-lg bg-[#0c0c12] border border-[#ffd000]/30 rounded-3xl p-5 sm:p-7 md:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.95),0_0_50px_rgba(255,208,0,0.12)] overflow-hidden my-auto"
+        className="relative w-full max-w-lg max-h-[92vh] overflow-y-auto bg-[#0c0c12] border border-[#ffd000]/30 rounded-3xl p-4 sm:p-7 md:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.95),0_0_50px_rgba(255,208,0,0.12)] my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Minimalist Gold Glowing Accent Line */}

@@ -67,16 +67,16 @@ export const BbcLogo: React.FC<BbcLogoProps> = ({
 
   // Horizontal variant (default)
   return (
-    <div className={`inline-flex items-center gap-3 select-none ${className}`}>
+    <div className={`inline-flex items-center gap-2 sm:gap-3 select-none min-w-0 ${className}`}>
       {emblem}
       {showWordmark && (
-        <div className={`flex flex-col leading-tight ${wordmarkClassName}`}>
-          <div className="flex items-center gap-1.5 font-display font-extrabold uppercase text-sm sm:text-base tracking-[0.2em]">
+        <div className={`flex flex-col leading-tight min-w-0 ${wordmarkClassName}`}>
+          <div className="flex items-center gap-1 sm:gap-1.5 font-display font-extrabold uppercase text-xs sm:text-base tracking-[0.15em] sm:tracking-[0.2em] whitespace-nowrap">
             <span className="text-white">BBC</span>
             <span className="text-funky-gold">PRO</span>
             <span className="text-white">GYM</span>
           </div>
-          <span className="text-[10px] sm:text-[11px] font-mono tracking-[0.22em] text-[#8e8d9c] uppercase mt-0.5">
+          <span className="text-[9px] sm:text-[11px] font-mono tracking-[0.16em] sm:tracking-[0.22em] text-[#8e8d9c] uppercase mt-0.5 whitespace-nowrap hidden min-[360px]:block">
             Aurangabad · Bihar
           </span>
         </div>

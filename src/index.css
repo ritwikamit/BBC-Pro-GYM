@@ -34,6 +34,10 @@
   }
 
   html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
     background-color: #000000;
     color: #ffffff;
     font-family: var(--font-sans);
@@ -47,12 +51,28 @@
     color: #ffffff;
     font-family: var(--font-sans), "Plus Jakarta Sans", sans-serif;
     overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    position: relative;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Universal Mobile Safety: ensure no media or embedded elements push beyond viewport width */
+  img, video, canvas, svg, iframe {
+    max-width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display), "Syne", sans-serif;
     letter-spacing: -0.02em;
+    word-break: break-word;
   }
 
   p, span, div, a, li, label {
@@ -188,20 +208,31 @@ header.glass-nav-bar,
   text-transform: uppercase;
 }
 
-/* Custom scrollbar */
+/* Custom smooth scrollbar for PC */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #050507;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f1f26;
+  background: #23232f;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 0.2s ease;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #ffd000;
+}
+
+/* Hide scrollbar for clean horizontal swipe containers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Keyframes */

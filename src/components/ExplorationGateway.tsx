@@ -108,8 +108,8 @@ export const ExplorationGateway: React.FC<ExplorationGatewayProps> = ({ onNaviga
         </div>
 
         {/* ── 1. Sleek Interactive Tab Switcher Capsule ── */}
-        <div className="flex justify-center mb-10 sm:mb-12">
-          <div className="inline-flex p-1.5 rounded-3xl bg-[#0c0c14]/90 border border-white/15 shadow-2xl max-w-full overflow-x-auto no-scrollbar">
+        <div className="flex justify-center mb-8 sm:mb-12 px-1 sm:px-0">
+          <div className="inline-flex p-1 sm:p-1.5 rounded-3xl bg-[#0c0c14]/90 border border-white/15 shadow-2xl max-w-full overflow-x-auto no-scrollbar">
             {TABS.map((tab) => {
               const Icon = tab.icon;
               const isActive = tab.id === activeTabId;
@@ -117,14 +117,31 @@ export const ExplorationGateway: React.FC<ExplorationGatewayProps> = ({ onNaviga
                 <button
                   key={tab.id}
                   onClick={() => setActiveTabId(tab.id)}
-                  className={`flex items-center gap-2.5 px-4 sm:px-6 py-3 rounded-2xl text-xs sm:text-sm font-sans font-bold transition-all duration-200 cursor-pointer whitespace-nowrap select-none ${
+                  className={`flex items-center gap-1.5 sm:gap-2.5 px-3 sm:px-6 py-2 sm:py-3 rounded-2xl text-[11px] sm:text-sm font-sans font-bold transition-all duration-200 cursor-pointer whitespace-nowrap select-none shrink-0 ${
                     isActive
                       ? 'bg-gradient-to-r from-[#ffd000] via-[#ffbe00] to-[#e59f00] text-[#050507] shadow-[0_4px_20px_rgba(255,208,0,0.4)] scale-[1.02]'
                       : 'text-white/70 hover:text-white hover:bg-white/[0.06]'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#050507]' : 'text-[#ffd000]'}`} />
-                  <span className="uppercase tracking-wider">{tab.label}</span>
+                  <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isActive ? 'text-[#050507]' : 'text-[#ffd000]'}`} />
+                  <span className="uppercase tracking-wider">
+                    {tab.id === 'facilities' ? (
+                      <>
+                        <span className="hidden sm:inline">Floor &amp; Equipment</span>
+                        <span className="sm:hidden">Facilities</span>
+                      </>
+                    ) : tab.id === 'trainers' ? (
+                      <>
+                        <span className="hidden sm:inline">Expert Trainers</span>
+                        <span className="sm:hidden">Trainers</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="hidden sm:inline">Location &amp; Transit</span>
+                        <span className="sm:hidden">Location</span>
+                      </>
+                    )}
+                  </span>
                 </button>
               );
             })}
@@ -132,7 +149,7 @@ export const ExplorationGateway: React.FC<ExplorationGatewayProps> = ({ onNaviga
         </div>
 
         {/* ── 2. Cinematic Active Tab Showcase Console ── */}
-        <div className="relative rounded-3xl bg-gradient-to-b from-[#101018]/95 via-[#0a0a10]/95 to-[#06060a] border border-[#ffd000]/30 shadow-[0_20px_60px_rgba(0,0,0,0.8),0_0_50px_rgba(255,208,0,0.08)] overflow-hidden p-6 sm:p-8 lg:p-10 mb-12">
+        <div className="relative rounded-3xl bg-gradient-to-b from-[#101018]/95 via-[#0a0a10]/95 to-[#06060a] border border-[#ffd000]/30 shadow-[0_20px_60px_rgba(0,0,0,0.8),0_0_50px_rgba(255,208,0,0.08)] overflow-hidden p-5 sm:p-8 lg:p-10 mb-8 sm:mb-12">
           
           {/* Top glowing gold accent beam */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#ffd000] to-transparent shadow-[0_0_16px_#ffd000]" />
@@ -186,10 +203,10 @@ export const ExplorationGateway: React.FC<ExplorationGatewayProps> = ({ onNaviga
               <div className="pt-3">
                 <button
                   onClick={() => onNavigate(activeTab.id)}
-                  className="glass-btn-funky h-12 px-6 sm:px-8 rounded-2xl flex items-center justify-center gap-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                  className="glass-btn-funky w-full sm:w-auto min-h-[46px] h-auto py-3 px-5 sm:px-8 rounded-2xl flex items-center justify-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.12em] sm:tracking-[0.14em] shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer text-center"
                 >
                   <span>{activeTab.ctaLabel}</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#050507]" />
+                  <ArrowUpRight className="w-4 h-4 text-[#050507] shrink-0" />
                 </button>
               </div>
             </div>

@@ -22,31 +22,31 @@ export const LocationPage: React.FC<LocationPageProps> = ({
   return (
     <div className="relative min-h-screen text-white flex flex-col justify-between overflow-hidden selection:bg-[#ffd000] selection:text-black">
       {/* Top Floating Glass Navigation Bar */}
-      <header className="sticky top-0 z-50 w-full glass-nav-bar py-3 px-4 sm:px-8 border-b border-white/10 shadow-2xl backdrop-blur-2xl">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
-          <div className="flex items-center gap-4">
+      <header className="sticky top-0 z-50 w-full glass-nav-bar py-3 px-3 sm:px-8 border-b border-white/10 shadow-2xl backdrop-blur-2xl">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-4 min-w-0">
             <button
               onClick={onBackToHome}
-              className="glass-btn h-10 px-3.5 rounded-2xl flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-white hover:text-[#ffd000] transition-colors"
+              className="glass-btn h-9 sm:h-10 px-2.5 sm:px-3.5 rounded-2xl flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono font-semibold uppercase tracking-wider text-white hover:text-[#ffd000] transition-colors shrink-0"
               aria-label="Return to Main Overview"
             >
-              <ArrowLeft className="w-4 h-4 text-[#ffd000]" />
+              <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#ffd000]" />
               <span className="hidden sm:inline">Back to Home</span>
             </button>
 
-            <button onClick={onBackToHome} className="flex items-center gap-2 focus:outline-none">
-              <BbcLogo size={34} showWordmark={true} />
+            <button onClick={onBackToHome} className="flex items-center gap-2 focus:outline-none min-w-0">
+              <BbcLogo size={32} showWordmark={true} />
             </button>
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <div className="hidden md:flex items-center px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-white/70">
               <span className="text-white font-medium">LOCATION & DIRECTIONS</span>
             </div>
 
             <button
               onClick={onOpenEnquiry}
-              className="glass-btn-funky h-10 px-4 rounded-2xl flex items-center gap-1.5 text-xs font-sans font-bold uppercase tracking-wider shadow-lg"
+              className="glass-btn-funky h-9 sm:h-10 px-3 sm:px-4 rounded-2xl flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-sans font-bold uppercase tracking-wider shadow-lg shrink-0 whitespace-nowrap"
             >
               <span>Join Now</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
