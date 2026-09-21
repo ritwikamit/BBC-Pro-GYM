@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BbcLogo } from './BbcLogo';
 import { LocationSection } from './LocationSection';
 import { GYM_DATA } from '../data/gym';
-import { ArrowLeft, ArrowUpRight, MapPin, Compass, Navigation, PhoneCall, Clock3, Car, Train, Bike } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, MapPin, Navigation, PhoneCall, Clock3, Car, Train, Bike } from 'lucide-react';
 
 interface LocationPageProps {
   onBackToHome: () => void;
@@ -62,7 +62,7 @@ export const LocationPage: React.FC<LocationPageProps> = ({
           <span>VISIT & CONNECT · AURANGABAD HQ</span>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8 border-b border-white/10">
+        <div className="flex flex-col justify-between gap-6 pb-8 border-b border-white/10">
           <div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight">
               LOCATION, TIMINGS <br className="hidden sm:inline" />
@@ -73,18 +73,6 @@ export const LocationPage: React.FC<LocationPageProps> = ({
             <p className="text-base sm:text-lg text-white/75 mt-3 max-w-2xl font-normal leading-relaxed">
               Find us in Gayatri Nagar, Mission School Road, Ratanua, Aurangabad, Bihar 824101. Easily accessible by bike, car, or walking.
             </p>
-          </div>
-
-          <div className="flex flex-wrap gap-2.5 font-mono text-xs text-white/80 shrink-0">
-            <a
-              href={GYM_DATA.googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-btn-funky px-4 py-3 rounded-2xl flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-black shadow-lg"
-            >
-              <Compass className="w-4 h-4" />
-              <span>Open in Google Maps</span>
-            </a>
           </div>
         </div>
       </section>
