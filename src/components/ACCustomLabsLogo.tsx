@@ -8,7 +8,7 @@ interface ACCustomLabsLogoProps {
 
 /**
  * ACCustom Labs Brand Logo
- * Renders the official developer brand logo as provided:
+ * Renders the official developer brand logo calibrated to match text baseline:
  * - Stylized "A" chevron monogram
  * - Geometric "C"
  * - Vibrant crimson "Custom" wordmark
@@ -19,11 +19,11 @@ export const ACCustomLabsLogo: React.FC<ACCustomLabsLogoProps> = ({
   className = '',
   size = 'default',
 }) => {
-  // Calibrated sizing for footer credits
+  // Calibrated compact sizing for seamless inline text alignment
   const sizeClasses = {
-    small: 'h-4 sm:h-5',
-    default: 'h-5 sm:h-6 md:h-6.5',
-    medium: 'h-6 sm:h-7 md:h-8',
+    small: 'h-3 sm:h-3.5',
+    default: 'h-3.5 sm:h-4',
+    medium: 'h-4.5 sm:h-5',
   }[size];
 
   return (
@@ -36,7 +36,7 @@ export const ACCustomLabsLogo: React.FC<ACCustomLabsLogoProps> = ({
         <img
           src="/ac-custom-labs.png"
           alt="ACCustom Labs"
-          className={`${sizeClasses} w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(255,0,43,0.25)] transition-transform duration-200 hover:scale-105`}
+          className={`${sizeClasses} w-auto object-contain filter drop-shadow-[0_1px_6px_rgba(255,0,43,0.3)] transition-transform duration-200 hover:scale-105`}
           loading="lazy"
           decoding="async"
         />

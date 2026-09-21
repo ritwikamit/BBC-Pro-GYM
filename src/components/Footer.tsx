@@ -111,12 +111,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             © {new Date().getFullYear()} BBC PRO GYM. All rights reserved. Train with purpose.
           </p>
 
-          {/* Designed and Developed By ACCustom Labs - Centered */}
+          {/* Designed and Developed By ACCustom Labs - Centered & Aligned */}
           <div className="flex items-center justify-center gap-2 text-xs font-sans text-white/60 hover:text-white/80 transition-colors">
             <span className="whitespace-nowrap">Designed and developed by</span>
             <ACCustomLabsLogo
               size="default"
-              className="inline-flex items-center transition-transform duration-200 hover:scale-[1.03]"
+              className="inline-flex items-center translate-y-[1px] transition-transform duration-200 hover:scale-[1.04]"
             />
           </div>
 
